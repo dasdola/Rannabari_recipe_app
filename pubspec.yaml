@@ -1,15 +1,22 @@
 name: rannabari_recipe_app
+
 description: "A new Flutter project."
+
 publish_to: 'none'
+
 version: 0.1.0+1
 
 environment:
   sdk: ^3.11.1
 
 dependencies:
-  firebase_core: ^4.14.0
   flutter:
     sdk: flutter
+
+  cloud_firestore: ^6.5.0
+  firebase_core: ^4.10.0
+  iconsax: ^0.0.8
+  provider: ^6.1.5+1
 
 dev_dependencies:
   flutter_test:

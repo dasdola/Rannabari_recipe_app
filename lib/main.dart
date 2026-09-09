@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:rannabari_recipe_app/Views/app_main_screen.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MainApp());
+  runApp(const AppMain());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class AppMain extends StatelessWidget {
+  const AppMain({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
+      debugShowCheckedModeBanner: false,
+      home: AppMainScreen(),
     );
   }
 }
