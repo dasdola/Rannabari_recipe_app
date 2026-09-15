@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-//import 'package:test23/Views/app_home_screen.dart';
+import 'package:rannabari_recipe_app/Views/app_home_screen.dart';
+import 'package:rannabari_recipe_app/Views/favorite_screen.dart';
+import 'package:rannabari_recipe_app/Views/settings_screen.dart';
 import 'package:rannabari_recipe_app/utilities/constant.dart';
 import 'package:iconsax/iconsax.dart';
 
-class AppMainScreen extends StatefulWidget {
-  const AppMainScreen({super.key});
+class AppMain extends StatefulWidget {
+  const AppMain({super.key});
 
   @override
-  State<AppMainScreen> createState() => _AppMainScreenState();
+  State<AppMain> createState() => _AppMainState();
 }
 
-class _AppMainScreenState extends State<AppMainScreen> {
+class _AppMainState extends State<AppMain> {
   int selectedIndex = 0;
   late final List<Widget> page;
-
   @override
   void initState() {
     page = [
-      // AppHomeScreen(),
-      navBarPage(Iconsax.home5),
-      navBarPage(Iconsax.heart5),
+      AppHomeScreen(), 
+      const FavoriteScreen(),
       navBarPage(Iconsax.calendar5),
-      navBarPage(Iconsax.setting_21),
+      const SettingsScreen(),
     ];
     super.initState();
   }
@@ -78,7 +78,7 @@ class _AppMainScreenState extends State<AppMainScreen> {
     );
   }
 
-  Widget navBarPage(IconData iconName) {
+  navBarPage(iconName) {
     return Center(child: Icon(iconName, size: 100, color: kprimarycolor));
   }
 }
